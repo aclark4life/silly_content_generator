@@ -6,7 +6,7 @@ setup(
     py_modules=['silly_content_generator'],
     entry_points = {
         'console_scripts': [
-            'silly_content_generator = silly_content_generator.silly_content_generator:main',
+            'silly_content_generator = silly_content_generator:main',
         ],
     }
 )
