@@ -8,6 +8,7 @@ setup(
     long_description=open('README.txt','rb').read(),
     author='Alex Clark',
     author_email='aclark@aclark.net',
+    url='https://github.com/aclark4life/silly_content_generator',
     py_modules=['silly_content_generator'],
     install_requires=['lorem-ipsum-generator'],
     entry_points = {
