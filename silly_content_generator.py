@@ -10,9 +10,9 @@ _MAGIC_NUMBER = 5
 
 
 def create_index(outfile):
-        index = open(outfile, 'wb')
-        index.write(markup_gen.generate_paragraphs_html_p(_MAGIC_NUMBER))
-        index.close()
+    index = open(outfile, 'wb')
+    index.write(markup_gen.generate_paragraphs_html_p(_MAGIC_NUMBER))
+    index.close()
 
 
 def create_dirs():
