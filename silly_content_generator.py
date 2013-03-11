@@ -1,17 +1,18 @@
-
+from lipsum import Generator, MarkupGenerator
 import os
 import string
-from lipsum import Generator, MarkupGenerator
+
 
 generator = Generator()
 markup_gen = MarkupGenerator()
 
-_MAGIC_NUMBER = 5
+
+NUM = 5
 
 
 def create_index(outfile):
     index = open(outfile, 'wb')
-    index.write(markup_gen.generate_paragraphs_html_p(_MAGIC_NUMBER))
+    index.write(markup_gen.generate_paragraphs_html_p(NUM))
     index.close()
 
 
