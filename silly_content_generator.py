@@ -18,8 +18,8 @@ def create_index(outfile):
 def create_dirs():
     for dir in generator.generate_sentence().split(' '):
         # http://stackoverflow.com/questions/265960
-        dir = dir.translate(string.maketrans("", ""),
-            string.punctuation).lower()
+        dir = dir.translate(
+            string.maketrans("", ""), string.punctuation).lower()
         print dir
         try:
             os.mkdir(dir)
