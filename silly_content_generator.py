@@ -7,8 +7,10 @@ import string
 generator = Generator()
 markup_gen = MarkupGenerator()
 parser = argparse.ArgumentParser(description='Create some content.')
+parser.add_argument("-i", "--index")  # Name of index file e.g. index.html
 
 
+INDEX = 'index.html'
 NUM = 5
 
 
@@ -19,20 +21,23 @@ def create_index(outfile):
 
 
 def create_dirs():
-    for dir in generator.generate_sentence().split(' '):
+    for directory in generator.generate_sentence().split(' '):
         # http://stackoverflow.com/questions/265960
-        dir = dir.translate(
+        directory = directory.translate(
             string.maketrans("", ""), string.punctuation).lower()
-        print dir
+        print directory
         try:
-            os.mkdir(dir)
+            os.mkdir(directory)
         except OSError:
-            print "dir '%s' already exists" % dir
-        outfile = '%s/index.html' % dir
+            print "dir '%s' already exists" % directory
+        outfile = '%s/%s' % (directory, index)
         create_index(outfile)
 
 
 def main():
     args = parser.parse_args()
-    create_index('index.html')
-    create_dirs()
+    index = INDEX
+    if args.index:
+        index = args.index:
+    create_index(index)
+    create_dirs(index)
