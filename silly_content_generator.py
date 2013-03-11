@@ -1,10 +1,12 @@
 from lipsum import Generator, MarkupGenerator
+import argparse
 import os
 import string
 
 
 generator = Generator()
 markup_gen = MarkupGenerator()
+parser = argparse.ArgumentParser(description='Create some content.')
 
 
 NUM = 5
@@ -31,5 +33,6 @@ def create_dirs():
 
 
 def main():
+    args = parser.parse_args()
     create_index('index.html')
     create_dirs()
